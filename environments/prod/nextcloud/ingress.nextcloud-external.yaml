@@ -15,10 +15,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-url> # nextcloud-url
+    - <nextcloud-url> # nextcloud-url
     secretName: nextcloud-cert
   rules:
-  - host: <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-url> #nextcloud-url
+  - host: <nextcloud-url> #nextcloud-url
 
     http:
       paths:
@@ -48,10 +48,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-internal-url>  #nextcloud-internal-url
+    - <nextcloud-internal-url>  #nextcloud-internal-url
     secretName: diagon-ally-tls 
   rules:
-  - host: <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-internal-url>  #nextcloud-internal-url
+  - host: <nextcloud-internal-url>  #nextcloud-internal-url
     http:
       paths:
       - path: /
