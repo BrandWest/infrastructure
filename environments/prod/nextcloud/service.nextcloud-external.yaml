@@ -23,7 +23,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/truenas"
 subsets:
   - addresses:
-      - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas-ip>
+      - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas_ip>
     ports:
       - port: 30027
 
@@ -82,9 +82,11 @@ kind: Endpoints
 metadata:
   name: nextcloud-external-ip
   namespace: external-resources
+  annotations:
+    avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/truenas"
 subsets:
 - addresses:
-  - ip: 10.0.0.200
+  - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas_ip>
   ports:
   - port: 30027
     name: http
