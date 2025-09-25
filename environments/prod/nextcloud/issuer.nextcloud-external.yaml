@@ -4,13 +4,14 @@ metadata:
   name: nextcloud-letsencrypt
   namespace: external-resources
   annotations:
-    avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/cloudflare"
+    avp.kubernetes.io/path-1: "argocd/data/argocd-vault-plugin/cloudflare"
+    avp.kubernetes.io/path-2: "argocd/data/argocd-vault-plugin/nextcloud"
 spec:
   acme:
     # The ACME server URL
     server: https://acme-v02.api.letsencrypt.org/directory # For dev env
     # Email address used for ACME registration
-    email: <path:argocd/data/argocd-vault-plugin/cloudflare#email> #cloudflare name
+    email: <path:path-1#email> #cloudflare name
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
       name: nextcloud-letsencrypt
@@ -19,10 +20,10 @@ spec:
     # An empty 'selector' means that this solver matches all domains
     - selector:
         dnsNames:
-        - <nextcloud-url> #nextcloud-url
+        - <path:path-2#nextcloud-url> #nextcloud-url
       dns01:
         cloudflare:
-          email: <email>
+          email: <path:path-1#email>
           apiKeySecretRef:
             name: cloudflare-api-token-secret
             key: api-token
