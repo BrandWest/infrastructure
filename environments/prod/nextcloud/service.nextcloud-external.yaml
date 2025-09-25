@@ -23,7 +23,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/truenas"
 subsets:
   - addresses:
-      - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas-ip>
+      - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas_ip>
     ports:
       - port: 30027
 
@@ -84,7 +84,7 @@ metadata:
   namespace: external-resources
 subsets:
 - addresses:
-  - ip: 10.0.0.200
+  - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas_ip>
   ports:
   - port: 30027
     name: http
