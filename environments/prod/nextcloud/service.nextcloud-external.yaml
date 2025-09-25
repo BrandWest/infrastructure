@@ -7,7 +7,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/nextcloud"
 spec:
   type: ExternalName
-  externalName: <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-internal-url>
+  externalName: <nextcloud-internal-url>
   ports:
   - port: 30027
     targetPort: 30027
@@ -23,7 +23,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/truenas"
 subsets:
   - addresses:
-      - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas_ip>
+      - ip: <truenas_ip>
     ports:
       - port: 30027
 
@@ -39,7 +39,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/nextcloud"
 spec:
   type: ExternalName
-  externalName: <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-internal-url>  #nextcloud-internal-url
+  externalName: <nextcloud-internal-url>  #nextcloud-internal-url
   ports:
   - port: 8443
     targetPort: 8443
@@ -57,7 +57,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/nextcloud"
 spec:
   type: ExternalName
-  externalName: <path:argocd/data/argocd-vault-plugin/nextcloud#nextcloud-internal-url>  #nextcloud-internal-url
+  externalName: <nextcloud-internal-url>  #nextcloud-internal-url
   ports:
   - port: 30027
     targetPort: 30027
@@ -86,9 +86,7 @@ metadata:
     avp.kubernetes.io/path: "argocd/data/argocd-vault-plugin/truenas"
 subsets:
 - addresses:
-  - ip: <path:argocd/data/argocd-vault-plugin/truenas#truenas_ip>
+  - ip: <truenas_ip>
   ports:
   - port: 30027
     name: http
----
-
